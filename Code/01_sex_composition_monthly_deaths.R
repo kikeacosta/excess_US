@@ -111,3 +111,14 @@ db_w4 <-
 write_rds(db_w4, "Output/weekly_deaths_by_sex_2015_2019.rds")
 
 
+
+# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+# Weekly mortality data by age, sex, and state since 2020
+# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+# loading data 
+db_2020 <- 
+  read_csv("Data/Provisional_COVID-19_Deaths_by_Sex_and_Age.csv",
+           col_types = cols(.default = "c"))
+
+unique(db_2020$Group)
+# ahhhh

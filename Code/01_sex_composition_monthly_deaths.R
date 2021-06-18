@@ -1,5 +1,5 @@
-library(lubridate)
-library(tidyverse)
+library(here)
+source(here("Code/00_functions.R"))
 
 db <- read_tsv("Data/pop by state.txt",
                col_types = cols(.default = "c"))
@@ -86,7 +86,7 @@ db_w2 <-
 
 # test same age groups in the two datasets
 unique(db_w2$Age) %>% sort()
-unique(db5$Age) %>% sort()
+unique(db4$Age) %>% sort()
 
 # identify the states in the monthly mortality database
 states <- unique(db4$State)

@@ -5,7 +5,7 @@ source(here("Code/00_functions.R"))
 # ~~~~~~~~~~~~
 db_dp <- read_rds(here("Output", "master_db_monthly_deaths_population_state_sex_age_2010_2022.rds"))
 
-unique(db_p$State) %>% sort()
+unique(db_dp$State) %>% sort()
 
 # definition of flu seasons and heat waves
 # For northern countries

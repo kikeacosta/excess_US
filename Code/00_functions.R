@@ -14,6 +14,7 @@ library(pacman)
 pkgs <- c("tidyverse",
           "here",
           "lubridate",
+          "vroom",
           "parallel",
           "parallelsugar",
           "ISOweek",

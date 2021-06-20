@@ -24,7 +24,9 @@ db_de <- db_dp %>%
   mutate(sn12 = sin((2*pi*t)/(12)),
          cs12 = cos((2*pi*t)/(12)),
          # excluding winter and summer weeks, as well as 2009 and COVID-19 pandemics
-         include = ifelse(!(Month %in% flu_season) & Year < 2020, 1, 0),
+         include = case_when(Age == 0 ~ 1,
+                             Age > 0 & !(Month %in% flu_season) & Year < 2020 ~ 1, 
+                             TRUE ~ 0),
          include = factor(include)) %>% 
   drop_na()
 
